@@ -1,9 +1,85 @@
-<!-- @include header -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>College Crowd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+    <!-- Le styles -->
+    <!-- <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet"> -->
+    <!-- <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet"> -->
+
+    <link rel='stylesheet' href='../../assets/css/bootstrap.css'>
+    <link rel='stylesheet' href='../../assets/css/bootstrap-metro.css'>
+    <link rel='stylesheet' href='../../assets/font-awesome/css/font-awesome.css'>
+    <style type="text/css">
+      body { padding:20px 0; }
+    </style>
+    <link rel='stylesheet' href='../../assets/css/bootstrap-responsive.css'>
+    <link rel='stylesheet' href='../../assets/css/style.css'>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <!-- <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-114x114.png"> -->
+  </head>
+<body>
 
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span10 offset1">
-        <!-- @include banner -->
+        <div class="alert">
+  <i class="icon icon-money icon-large"></i> <strong>Interested in funding a project?</strong> Please first read our <a href="../guidelines/Funder_Guidelines.html" class="link-white">guidelines</a>.
+</div>
+<div class="alert alert-info">
+  <i class="icon icon-info-sign icon-large"></i> College Crowd is organized by members of the Williams Alumni Community. It is <strong>not</strong> affiliated or endorsed by Williams College or its administration. 
+</div>
+<div class="header">
+  <div class="header-text">
+    <a href="../index.html" class="current-parent unstyled-link">
+      <h1><span class="text-white">College Crowd</span> <span class="logo">Williams</span></h1>
+    </a>
+  </div>
+</div>
+<div class="clearfix">
+  <ul class="nav nav-pills pull-right">
+    <li class='current-parent'><a class='current-parent' href="../index.html">Projects</a></li>
+    <li><a href="../guidelines/Funder_Guidelines.html">Funder Guidelines</a></li>
+    <li><a href="../guidelines/Fundraiser_Guidelines.html">Fundraiser Guidelines</a></li>
+  </ul>
+</div>
         <div class="page-header center">
           <h1>
              20 Seconds to a Better You and World
@@ -111,4 +187,8 @@
     </div>
   </div>
 
-<!-- @include footer -->
+  <!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+</body>
+</html>

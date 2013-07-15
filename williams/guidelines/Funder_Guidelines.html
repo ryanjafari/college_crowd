@@ -1,58 +1,187 @@
-<!-- @include header -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>College Crowd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span10 offset1">
-        <!-- @include banner -->
-        <div class="page-header center">
-          <h1>
-            Guidelines for Funders
-          </h1>
-        </div>
-        <div class="row-fluid">
-          <!-- <div class="span6"> -->
+
+  <!-- Hammer reload -->
+  <script>
+  setInterval(function(){
+    try {
+      if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+      ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+      ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+      ws.onmessage = function(){
+        var links = document.getElementsByTagName('link'); 
+        for (var i = 0; i < links.length;i++) { 
+          var link = links[i]; 
+          if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+            href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+            link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+          }
+        }
+      }
+    }catch(e){}
+  }, 1000)
+  </script>
+  <!-- /Hammer reload -->
+
+
+  <!-- Le styles -->
+  <!-- <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet"> -->
+  <!-- <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet"> -->
+
+  <link rel='stylesheet' href='../../assets/css/bootstrap.css'>
+  <link rel='stylesheet' href='../../assets/css/bootstrap-metro.css'>
+  <link rel='stylesheet' href='../../assets/font-awesome/css/font-awesome.css'>
+  <style type="text/css">
+  body { padding:20px 0; }
+  </style>
+  <link rel='stylesheet' href='../../assets/css/bootstrap-responsive.css'>
+  <link rel='stylesheet' href='../../assets/css/style.css'>
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+      <!-- Le fav and touch icons -->
+    <!-- <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-114x114.png"> -->
+  </head>
+  <body>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <div class="alert">
+            <i class="icon icon-money icon-large"></i> <strong>Interested in funding a project?</strong> Please first read our <a href="Funder_Guidelines.html" class="current link-white">guidelines</a>.
+          </div>
+          <div class="alert alert-info">
+            <i class="icon icon-time icon-large"></i> College Crowd's <em>All or Nothing</em> pilot began on 7/14/13 and ends on 8/4/13. There are <strong>30</strong> days left!
+          </div>
+          <div class="header">
+            <div class="header-text">
+              <a href="../index.html" class="current-parent unstyled-link">
+                <h1><span class="text-white">College Crowd</span> <span class="logo">Williams</span></h1>
+              </a>
+            </div>
+          </div>
+          <div class="clearfix">
+            <ul class="nav nav-pills pull-right">
+              <li class='current-parent'><a class='current-parent' href="../index.html">Projects</a></li>
+              <li class='current'><a class='current' href="Funder_Guidelines.html">Funder Guidelines</a></li>
+              <li><a href="Fundraiser_Guidelines.html">Fundraiser Guidelines</a></li>
+            </ul>
+          </div>
+          <div class="page-header center">
+            <h1>
+              Guidelines for Funders
+            </h1>
+          </div>
+          <div class="row-fluid">
+            <!-- <div class="span6"> -->
 
 
             <h2><center><b>What is College Crowd?</b></center></h2>
             <p>College Crowd is a service for funding projects originating from the Williams Community. Similar to popular ‘crowdfunding’ websites like Kickstarter, Indiegogo and Kiva, College Crowd connects individual students, alums and professors with the greater Williams Community.</p>
 
-            <p>Whether the idea is a business venture, charity or academic/artistic endevor, the goal is to enable passionate individuals to receive the funding and support they need to make their project happen.</p>
+            <p>Whether the idea is a business venture, charity, academic endeavor or artistic pursuit, the goal is to enable passionate individuals to receive the funding and support they need to make their project happen.</p>
 
             <h2><center><b>How it works</b></center></h2>
             <h3><b>Step 1:</b> A 'Fundraiser' submits a project</h3>
 
-            <p>A ‘Fundraiser’(a student, alum or professor) posts her project outlining what they’re  working on, how much they’re seeking to raise and how those funds will be used. In addition, they may offer a ‘reward’ to ‘Funders’ who donate to their project.</p>
+            <p>A Fundraiser (a student, alum or professor) posts her project outlining what she is working on, how much she is seeking to raise and how those funds will be used. In addition, she may offer a ‘reward’ to ‘Funders’ who donate to her project.</p>
 
-            <h3><b>Step 2:</b> ‘Funders’ review project and make a donation</h3>
+            <h3><b>Step 2:</b> ‘Funders’ review the project and make a donation</h3>
 
-            <p>‘Funders’ review the details of the project, message the Fundraiser and, if interested can make a donation.</p>
+            <p>Funders review the details of the project and can message the Fundraiser if they have a question or want to provide feedback. If they are interested, Funders can support the project by making a donation.</p>
 
-            <h3><b>Step 3:</b> If fundraising goal is met, the Fundraiser receives the funds</h3>
+            <h3><b>Step 3:</b> Fundraising ceases when the funding cycle ends</h3>
 
-            <p>College Crowd is experimenting with an ‘All-or-Nothing” model. This means the Fundraiser will only receive the funds if her fundraising goal is met. The rationale is that fully-funded projects have a greater chance of success than partially funded ones; moreover, it encourages the Fundraiser to put in the effort to promote their campaign. If the fundraising goal is not met, donations are returned to Funders.</p>
+            <p>Fundraisers are provided a 30-day funding cycle in which they can raise money; in some cases, the funding cycle may be extended on a project by project basis.</p> 
+
+            <p>College Crowd is experimenting with a ‘Keep-it-All” model. This means, at the end of the funding cycle, the Fundraiser keeps any and all funds regardless of whether she meets her fundraising goal.</p>
 
 
             <h2><center><b>Guidelines</b></center></h2>
             <p>We have just a few guidelines to ensure expectations are met between Funders and Fundraisers. If you have any questions not addressed here, please feel free to email <a href="mailto:08tqn@williams.edu?subject=College%20Crowd%20Question">Thai Nguyen</a> (Williams ‘08).</p>
 
+
+            <h2>Is College Crowd affiliated or sponsored by Williams College?</h2>
+            <p>College Crowd is organized by members of the Williams College Alumni Community; however, it is <b>not</b> affiliated or sponsored by the college or administration.</p>
+
             <h2>Who can submit a project on College Crowd?</h2>
             <p>At the moment, projects are open to students, alums, professors and adminstrators of Williams College. Currently, proposals can be sent to <a href="mailto:08tqn@williams.edu?subject=Proposal%20Submission">Thai Nguyen</a>.</p>
 
             <h2>Who can fund projects?</h2>
-            <p>Similarly, the ability to fund is limited to students, alums, professors and administrators of Williams College.</p>
+            <p>Members of the Williams Community (i.e. students, alums, professors and adminstrators) and their friends and family are eligible to make donations to the projects of Fundraisers.</p>
 
             <h2>What is not allowed?</h2>
             <p>Currently, we’re curating project submissions and using our discretion on what types are appropriate. As we continue to experiment, we’ll develop more explicit guidlines; in the meantime, we reach out to Fundraisers if we feel their project may not be well suited for College Crowd.</p>
 
             <h2>Is my pledge tax deductable?</h2>
-            <p>In general, no. However, some US projects started by or with a 501(c)(3) organization may offer tax deductions. If so, this will be touted on the project page. If you have questions about tax deductions, please contact the project creator directly via the "Message me" button on the project page.</p>
+            <p>In general, no. However, some US projects started by or with a 501(c)(3) organization may offer tax deductions. If so, this will be mentioned on the project page. If you have questions about tax deductions, please contact the project creator directly via the "Message me" button on the project page.</p>
 
             <h2>Are there fees?</h2>
             <p>Currently, we don’t charge a fee.</p>
-          <!-- </div> -->
+
+            <h2>Do Funders get ownership or equity in the projects they fund?</h2>
+            <p>No. Fundraisers keep 100% ownership of their work. Currently, College Crowd cannot be used to offer financial returns or equity, or to solicit loans.</p> 
+
+            <p>Some projects that are funded on College Crowd may go on to make money, but Funders are supporting projects to help them come to life, not financially profit.</p>
+
+            <h2>Who is responsible for completing a project as promised?</h2>
+            <p>It's the Fundraiser's responsibility to complete their project. College Crowd is not involved in the development of the projects themselves.</p>
+
+            <p>College Crowd does not guarantee projects or investigate a Fundraiser's ability to complete her project. On College Crowd, Funders (you!) ultimately decide the validity and worthiness of a project by whether they decide to fund it.</p> 
+
+            <h2>How do Funders know if a project will follow through?</h2>
+            <p>Launching a project on College Crowd is a very public act, and Fundraisers put their reputations at risk within the Williams Community when they do.</p>
+
+            <p>Funders should look for Fundraisers who share a clear plan for how their project will be completed and who have a history of doing so. Fundraisers are encouraged to share links and as much background information as possible so Funders can make informed decisions about the projects they support.</p>
+
+            <p>If a Fundraiser has no demonstrable experience in doing something like their project or doesn't share key information, Funders should take that into consideration. Does the Fundraiser include links to any websites that show work related to the project, or past projects? Does the Fundraiser appear in the video? Have they connected via Facebook?</p>
+
+            <p>Don't hesitate to request information from a Fundraiser. You can always reach out before pledging via the "Message the Team" button on the project page.</p>
+
+            <h2>What should I do if a Fundraiser is taking longer than expected to complete her project?</h2>
+            <p>We instruct Fundraisers that if problems come up, they are expected to post a project update and email Funders explaining the situation. Sharing the story, speed bumps and all, is crucial. Most Funders support projects because they want to see something happen and they'd like to be a part of it. Fundraisers who are honest and transparent will usually find Funders to be understanding.</p>
+
+            <p>It's not uncommon for things to take longer than expected. Sometimes the execution of the project proves more difficult than the Fundraiser had anticipated. If a Fundraiser is making a good faith effort to complete their project and is transparent about it, Funders should do their best to be patient and understanding while demanding continued accountability from the Funder.</p>
+
+            <p>If the problems are severe enough that the Fundraiser can't fulfill her project, Fundraisers need to find a resolution. Steps could include offering refunds, detailing exactly how funds were used, and other actions to satisfy Funders.</p> 
+
+            <h2>Is a creator legally obligated to fulfill the promises of their project?</h2>
+            <p>For our pilot, we do not have a way to legally enforce that a Fundraiser fulfills the promises of their project. However, we have faith that early Fundraisers using College Crowd understand that acting in a manner that is not transparent, honest and with integrity risks damaging their personal brand and reputation within the Williams Community.</p>
+
+            <h2>Can College Crowd refund the money if a project is unable to fulfill?</h2>
+            <p>No. College Crowd doesn't issue refunds as transactions are between Funders and Fundraisers. In fact transactions are not handled by College Crowd itself; instead, secure services (e.g. PayPal) arranged by the Fundraisers process pledges. Fundraisers do have the ability to refund Funders.</p>
+
+            <h2>How do I know a project Fundraiser is who they claim they are?</h2>
+            <p>Perhaps you know the project Fundraiser, or you heard about the project from a trusted source.</p>
+
+            <p>Maybe they have a first-person video. That would be hard to fake.</p>
+
+            <p>Still not sure? Do a quick search using the <a href="https://www.alumniconnections.com/olc/membersonly/WLC/old/old.cgi?FNC=SIMPLESEARCH__Aindex_html" target="_blank">Williams Alumni Directory</a>. Are they on Facebook? Do they provide links for further verification? The web is an invaluable resource for learning more about a person.</p>
+
+            <p>At the end of the day, use your internet street smarts.</p>
+
+
+            <!-- </div> -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-<!-- @include footer -->
+  <!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+</body>
+</html>

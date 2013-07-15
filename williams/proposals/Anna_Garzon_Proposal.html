@@ -1,77 +1,198 @@
-<!-- @include header -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>College Crowd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span10 offset1">
-        <!-- @include banner -->
-        <div class="page-header center">
-          <h1>
-            Wildflour Bakery needs new equipment!
-            <br>
-            <small class="muted">By Anna Garzon ('14)</small>
-          </h1>
-        </div>
-        <div class="row-fluid">
-          <div class="span7">
-            <iframe width="420" height="315" src="http://www.youtube.com/embed/TU1kHZc-2ps" frameborder="0" allowfullscreen></iframe>
-            <h2>Tell me more!</h2>
-            <p>I started Wildflour Bakery in 2011 as a Williams College sophomore. I hoped to strengthen community connections by doing what I love—baking with locally sourced, organic ingredients. The residential kitchen bakery has become a way for me to share my products with the Williamstown community while learning about owning a micro-business. I began selling baked goods at the Williamstown Farmers' Market and by special order. Pretty quickly, I had standing orders to sell at the frequent ‘Billsville House Concerts’ and to a few Williams College department and club meetings. In my first year I was busy enough to turn down orders and still have enough business to be profitable.</p>
 
-            <p>This year, my goal is to expand the capacity of Wildflour Bakery in order to fill the growing demand from Williams College and the Williamstown community. I’ve recently completed an agreement to provide pastries for the student-run Goodrich Coffee House for the coming year. I am hoping to raise $2000 to purchase equipment that would allow me to increase the production and efficiency of Wildflour Bakery. By increasing Wildflour’s capacity, I can fulfill the Goodrich Coffee House request and reach the Williams College community on a larger scale, as well as expand into other markets in the Williamstown community.</p>
+  <!-- Hammer reload -->
+  <script>
+  setInterval(function(){
+    try {
+      if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+      ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+      ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+      ws.onmessage = function(){
+        var links = document.getElementsByTagName('link'); 
+        for (var i = 0; i < links.length;i++) { 
+          var link = links[i]; 
+          if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+            href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+            link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+          }
+        }
+      }
+    }catch(e){}
+  }, 1000)
+  </script>
+  <!-- /Hammer reload -->
 
-            <p>For those interested in more detail: Goodrich has asked for 30-45 pastries 2-3x per week. A countertop convection oven would make the baking process much more efficient; it has the capacity for four pans instead of the two allowed in a normal oven, and it provides a second baking space so that I can simultaneously bake different pastries at different temperatures. Other items that would make the process run more smoothly include more sheet pans, a small rolling rack for easy sheet pan stacking and space efficiency, sheet pan covers for clean transport of baked goods, and an appealing display case for my pastries at Goodrich. Finally, I’m also hoping to buy my own market equipment, including an EZ Up canopy and a couple folding tables (I borrowed from a local farmer friend last year). With my own equipment I will have more flexibility to attend markets or events other than just those available on the days when the borrowed equipment is available.</p>
+
+  <!-- Le styles -->
+  <!-- <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet"> -->
+  <!-- <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet"> -->
+
+  <link rel='stylesheet' href='../../assets/css/bootstrap.css'>
+  <link rel='stylesheet' href='../../assets/css/bootstrap-metro.css'>
+  <link rel='stylesheet' href='../../assets/font-awesome/css/font-awesome.css'>
+  <style type="text/css">
+  body { padding:20px 0; }
+  </style>
+  <link rel='stylesheet' href='../../assets/css/bootstrap-responsive.css'>
+  <link rel='stylesheet' href='../../assets/css/style.css'>
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+      <!-- Le fav and touch icons -->
+    <!-- <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-114x114.png"> -->
+  </head>
+  <body>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <div class="alert">
+            <i class="icon icon-money icon-large"></i> <strong>Interested in funding a project?</strong> Please first read our <a href="../guidelines/Funder_Guidelines.html" class="link-white">guidelines</a>.
+          </div>
+          <div class="alert alert-info">
+            <i class="icon icon-info-sign icon-large"></i> College Crowd is organized by members of the Williams Alumni Community. It is <strong>not</strong> affiliated or endorsed by Williams College or its administration. 
+          </div>
+          <div class="header">
+            <div class="header-text">
+              <a href="../index.html" class="current-parent unstyled-link">
+                <h1><span class="text-white">College Crowd</span> <span class="logo">Williams</span></h1>
+              </a>
+            </div>
+          </div>
+          <div class="clearfix">
+            <ul class="nav nav-pills pull-right">
+              <li class='current-parent'><a class='current-parent' href="../index.html">Projects</a></li>
+              <li><a href="../guidelines/Funder_Guidelines.html">Funder Guidelines</a></li>
+              <li><a href="../guidelines/Fundraiser_Guidelines.html">Fundraiser Guidelines</a></li>
+            </ul>
+          </div>
+          <div class="page-header center">
+            <h1>
+              Help student-run Wildflour Bakery grow in Williamstown!
+              <br>
+              <small class="muted">By Anna Garzon ('13)</small>
+            </h1>
+          </div>
+          <div class="row-fluid">
+            <div class="span7">
+              <iframe width="420" height="315" src="http://www.youtube.com/embed/TU1kHZc-2ps?rel=0" frameborder="0" allowfullscreen></iframe>
+              <h2>Tell me more!</h2>
+              <p><b>GOAL: Purchase new equipment to allow Wildflour Bakery to expand its capacity to fill growing demand from Williams College and the Williamstown community.</b></p>
+
+              <p>About Wildflour Bakery:</p>
+              <p><ul>
+               <li>started in 2011 by Anna Garzon ‘13, a Williams sophomore at the time</li>
+               <li>currently sells at Farmers’ Markets, concerts, and through special orders</li>
+               <li>For more detailed information, go to the Wildflour Bakery <a href="http://www.facebook.com/wildflourwilliamstown/info" target="_blank">Facebook Page</a>, or check out the <a href="https://www.facebook.com/wildflourwilliamstown/photos_stream" target="_blank">Facebook photos </a> to get an idea of what I like to make.</li>
+             </ul></p>
+
+             <p>I started Wildflour Bakery in 2011 as a Williams College sophomore. I hoped to strengthen community connections by doing what I love—baking with locally sourced, organic ingredients. The residential kitchen bakery has become a way for me to share my products with the Williamstown community while learning about owning a micro-business.</p>
+
+             <p>I began selling baked goods at the Williamstown Farmers' Market and by special order. Pretty quickly, I had standing orders to sell at the frequent ‘Billsville House Concerts’ and to a few Williams College department and club meetings. In my first year I was busy enough to turn down orders and still have enough business to be profitable.</p>
+
+             <p>This year, my goal is to expand the capacity of Wildflour Bakery in order to fill the growing demand from Williams College and the Williamstown community. I’ve recently completed an agreement to provide pastries for the student-run Goodrich Coffee House for the coming year. I am hoping to raise $2800 to purchase equipment that would allow me to increase the production and efficiency of Wildflour Bakery. By increasing Wildflour’s capacity, I can fulfill the Goodrich Coffee House request and reach the Williams College community on a larger scale, as well as expand into other markets in the Williamstown community.</p>
+
+             <center>
+              <div style="display:inline-block;"><IMG SRC="../../assets/img/Anna_Garzon_1.JPG" WIDTH=1280 HEIGHT=1280></div>
+            </center>
 
             <h2>What progress has been made?</h2>
-            <p>I have had extensive, hands-on experience running Wildflour Bakery for one year already (I studied away my junior year, and Wildflour Bakery has been on hiatus). I know that the bakery fills a niche in Williamstown, and that people are very receptive and positive about my baked goods. I have learned what the community wants, and how to talk to customers about the baked goods if changes need to be made. I’ve been successful enough that there is a clear demand for me to expand into new markets, such as the Goodrich Coffee House.</p>
+            <p><ul>
+              <li>experience running Wildflour Bakery for a year</li>
+              <li>completed an agreement to provide 30-45 pastries to Goodrich Coffee House 3x weekly</li>
+            </ul></p>
+
+            <p>I have had extensive, hands-on experience running Wildflour Bakery for one year already (I studied away my junior year, and Wildflour Bakery has been on hiatus). I know that the bakery fills a niche in Williamstown, and that people are very receptive and positive about my baked goods. I have learned what the community wants, and how to talk to customers about the baked goods if changes need to be made. I’ve been successful enough that there is a clear demand for me to expand into new markets.</p>
+
+            <center>
+              <div style="display:inline-block;"><IMG SRC="../../assets/img/Anna_Garzon_2.JPG" WIDTH=1435 HEIGHT=1435></div>
+            </center>
 
             <h2>How much cash do you need?</h2>
-            <p>$2000 total. All prices below are estimates based on preliminary research I have done.
+            <p>$2800 total. 
               <ul>
-              <li>Countertop convection oven ($1000)</li>
-              <li>Five new sheet pans ($25 total)</li>
-              <li>Sheet pan rolling rack ($100)</li>
-              <li>Five sheet pan covers ($15 total)</li>
-              <li>Website ($100 for the year)</li>
-              <li>EZ Up canopy ($200)</li>
-              <li>Tables ($100 for two)</li>
-              <li>Kitchen permit ($350 in MA)</li>
-              <li>Custom-built display case ($100-200)</li>
+                <li><b>Countertop convection oven ($1100)</b>-increase efficiency of baking process; 4-pan capacity instead of the 2-pan capacity of a normal oven</li> 
+                <li><b>Five new sheet pans ($30 total)</b>-more sheet pans can fit more pastries!</li> 
+                <li><b>Sheet pan rolling rack ($100)</b>-easy sheet pan stacking and increase space efficiency</li> 
+                <li><b>Five sheet pan covers ($40 total)</b>-clean transport of baked goods</li> 
+                <li><b>Other kitchen accessories ($100 total)</b>-such as a tiered cooling rack and new spatulas, rolling pin</li>
+                <li><b>Website ($100 for the year)</b>-increase professionalism, showcase all that Wildflour Bakery offers</li> 
+                <li><b>EZ Up canopy ($220)</b>-necessary for Farmers' Markets (I had been borrowing from a farmer friend)</li> 
+                <li><b>Tables ($150 for three)</b>-same as above</li> 
+                <li><b>Kitchen permit ($350)</b>-I have to renew my permit in order to bake legally for retail and wholesale sales</li>
+                <li><b>Display case for coffee house($100-200)</b>-to help my pastries look as good as they taste!</li>
+                <li><b>Signs, business cards, and marketing materials ($300)</b>-to spread the word about Wildflour Bakery!</li>
               </ul></p>
 
+              <center>
+                <div style="display:inline-block;"><IMG SRC="../../assets/img/Anna_Garzon_3.jpg" WIDTH=960 HEIGHT=960></div>
+              </center>
+
               <h2>Can I help without donating cash?</h2>
-              <p>Yes! First and foremost, I welcome any and all suggestions/tips/advice on running a small or micro-business of any kind. I would love to hear from you, even if you cannot or do not want to donate, please reach out—I love making connections. I’d love create or be part of a network of people who are working in any part of food production—from crafting compost to making wine to running a CSA, I’d love to hear about all of it. If you happen to have any skills in website design and would be interested in helping, I’d also love to hear from you (I am planning to use SquareSpace, but if anyone has a better suggestion, I’m definitely open to it).  I would also be interested in speaking with someone who has tips on the financial aspects of running a small business in Massachusetts.</p>
-          </div>
-          <div class="span4 offset1">
-            <div class="well">
-              <h2><i class="icon icon-thumbs-up"></i> 0<br><small class="text-purple">Backers</small></h2>
-              <h2><i class="icon icon-money"></i> $0<br><small class="text-purple">Raised of $2,000</small></h2>
-              <p>
-                <button class="btn btn-primary btn-block btn-large" type="submit"><i class="icon icon-thumbs-up"></i> Back This Project</button>
-                <button class="btn btn-block btn-large" type="submit">
-                  <i class="icon icon-comment"></i> Message The Team
-                  <br>
-                  <small><em>and support in any way you can!</em></small>
-                </button>
+              <p>Yes! First and foremost, I welcome any and all suggestions/tips/advice on running a small or micro-business of any kind. I would love to hear from you, even if you cannot or do not want to donate, please reach out—I love making connections. I’d love to create or be part of a network of people who are working in any part of food production—from crafting compost to making wine to running a CSA, I’d love to hear about all of it.</p> 
+
+              <p>I could also really benefit from financial advice. If you know anything about the finances of running a small business, I’d love to speak with you.</p>
+
+              <p>Finally, if you happen to have any skills in website design and would be interested in helping, I’d also love to hear from you (I am planning to use SquareSpace, but if anyone has a better suggestion, I’m definitely open to it). <a href="mailto:wildflourwilliamstown@gmail.com">Feel free to email me!</a> 
               </p>
-              <p>Help this fundraiser by sharing this link with your networks: <span class="badge badge-success">goo.gl/TRC</span></p>
+
+              <center>
+                <div style="display:inline-block;"><IMG SRC="../../assets/img/Anna_Garzon_4.png" WIDTH=517 HEIGHT=490></div>
+              </center>
+
             </div>
-            <div class="well">
-              <h2><i class="icon icon-gift"></i> What's in it for me?</h2>
-              <p>
-                <ul><li>$5—Thank you on the website/Facebook</li>
-                <li>$10—Handwritten Thank You note, and Thank You on the website/Facebook</li>
-                <li>$25—A free pastry of your choice (available only for pickup in Williamstown) a handwritten Thank You note, and a Thank You on the website/Facebook</li>
-                <li>$50—A pretty box of five of my best-selling chocolate-dipped salted caramels, a free pastry of your choice (available only for pickup in Williamstown), a handwritten Thank You note, and a Thank You on the website/Facebook</li>
-                <li>$75—One dozen cookies (choice of chocolate chubbies, oatmeal raisin, gf/vegan banana-oat-chocolate, or molasses), a free pastry of your choice (available only for pickup in Williamstown), a handwritten Thank You note, and a Thank You on the website/Facebook</li>
-                <li>$100—One dozen cookies (choice of chocolate chubbies, oatmeal raisin, gf/vegan banana-oat-chocolate, or molasses) AND a pretty box of five of my best-selling chocolate-dipped salted caramels, a free pastry of your choice (available only for pickup in Williamstown), a handwritten Thank You note, and a Thank You on the website/Facebook</li>
-                <li>$250—A pdf of 15 of my favorite recipes, a pretty bag of seasonal apple cider caramels, one dozen cookies (choice of chocolate chubbies, oatmeal raisin, gf/vegan banana-oat-chocolate, or molasses), a pretty box of five of my best-selling chocolate-dipped salted caramels, a free pastry of your choice (available only for pickup in Williamstown), a handwritten Thank You note, and a Thank You on the website/Facebook</li>
-                <li>$500 and up—Assortment of baked goods sent to you every other week for 8 weeks (starting September), a pdf of 15 of my favorite recipes, a pretty bag of apple cider caramels, one dozen cookies (choice of chocolate chubbies, oatmeal raisin, gf/vegan banana-oat-chocolate, or molasses), a pretty box of five of my best-selling chocolate-dipped salted caramels, a free pastry of your choice (available only for pickup in Williamstown), a handwritten Thank You note, and a Thank You on the website/Facebook</li>
-                <br>Items are negotiable for something of the same value if you live in Williamstown and/or can pick up the items. I chose items that would ship well, but I realize that not everyone will need their items shipped to them.</ul></p>
+            <div class="span4 offset1">
+              <div class="well">
+                <h2><i class="icon icon-thumbs-up"></i> 0<br><small class="text-purple">Backers</small></h2>
+                <h2><i class="icon icon-money"></i> $0<br><small class="text-purple">Raised of $2,800</small></h2>
+                <p>
+                  <button class="btn btn-primary btn-block btn-large" type="submit"><i class="icon icon-thumbs-up"></i> Back This Project</button>
+                  <button class="btn btn-block btn-large" type="submit">
+                    <i class="icon icon-comment"></i> Message The Team
+                    <br>
+                    <small><em>and support in any way you can!</em></small>
+                  </button>
+                </p>
+                <p>Help this fundraiser by sharing this link with your networks: <span class="badge badge-success">goo.gl/TRC</span></p>
+              </div>
+              <div class="well">
+                <h2><i class="icon icon-gift"></i> What's in it for me?</h2>
+                <p>
+                  <ul><li><b>$5</b>—Thank you on the website/Facebook</li>
+                    <li><b>$10</b>—Handwritten Thank You note, and Thank You on the website/Facebook</li>
+                    <li><b>$25</b>—A free pastry of your choice (available only for pickup in Williamstown) a handwritten Thank You note, and a Thank You on the website/Facebook</li>
+                    <li><b>$50</b>—A pretty box of five of my best-selling chocolate-dipped salted caramels, a free pastry of your choice (available only for pickup in Williamstown), a handwritten Thank You note, and a Thank You on the website/Facebook</li>
+                    <li><b>$75</b>—One dozen cookies (choice of chocolate chubbies, oatmeal raisin, gf/vegan banana-oat-chocolate, or molasses), a free pastry of your choice (available only for pickup in Williamstown), a handwritten Thank You note, and a Thank You on the website/Facebook</li>
+                    <li><b>$100</b>—One dozen cookies (choice of chocolate chubbies, oatmeal raisin, gf/vegan banana-oat-chocolate, or molasses) AND a pretty box of five of my best-selling chocolate-dipped salted caramels, a free pastry of your choice (available only for pickup in Williamstown), a handwritten Thank You note, and a Thank You on the website/Facebook</li>
+                    <li><b>$250</b>—A pdf of 15 of my favorite recipes, a pretty bag of seasonal apple cider caramels, one dozen cookies (choice of chocolate chubbies, oatmeal raisin, gf/vegan banana-oat-chocolate, or molasses), a pretty box of five of my best-selling chocolate-dipped salted caramels, a free pastry of your choice (available only for pickup in Williamstown), a handwritten Thank You note, and a Thank You on the website/Facebook</li>
+                    <li><b>$500 and up</b>—Assortment of baked goods sent to you every other week for 8 weeks (starting September), a pdf of 15 of my favorite recipes, a pretty bag of apple cider caramels, one dozen cookies (choice of chocolate chubbies, oatmeal raisin, gf/vegan banana-oat-chocolate, or molasses), a pretty box of five of my best-selling chocolate-dipped salted caramels, a free pastry of your choice (available only for pickup in Williamstown), a handwritten Thank You note, and a Thank You on the website/Facebook</li>
+
+                    <br><p>If you are interested in directing your support at a particular item or set of items, please message me and let me know! I’d be more than happy to work with you on that.</p>
+
+                    <br>All items, except the free pastry for pickup in Williamstown, will be shipped to your location (if you live within the continental United States). Items are negotiable for something of the same value if you live in Williamstown and/or can pick up the items. I chose items that would ship well, but I realize that not everyone will need their items shipped to them.</ul></p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-<!-- @include footer -->
+  <!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+</body>
+</html>

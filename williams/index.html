@@ -1,9 +1,85 @@
-<!-- @include header -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>College Crowd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+    <!-- Le styles -->
+    <!-- <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet"> -->
+    <!-- <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet"> -->
+
+    <link rel='stylesheet' href='../assets/css/bootstrap.css'>
+    <link rel='stylesheet' href='../assets/css/bootstrap-metro.css'>
+    <link rel='stylesheet' href='../assets/font-awesome/css/font-awesome.css'>
+    <style type="text/css">
+      body { padding:20px 0; }
+    </style>
+    <link rel='stylesheet' href='../assets/css/bootstrap-responsive.css'>
+    <link rel='stylesheet' href='../assets/css/style.css'>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <!-- <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-114x114.png"> -->
+  </head>
+<body>
 
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span10 offset1">
-        <!-- @include banner -->
+        <div class="alert">
+  <i class="icon icon-money icon-large"></i> <strong>Interested in funding a project?</strong> Please first read our <a href="guidelines/Funder_Guidelines.html" class="link-white">guidelines</a>.
+</div>
+<div class="alert alert-info">
+  <i class="icon icon-info-sign icon-large"></i> College Crowd is organized by members of the Williams Alumni Community. It is <strong>not</strong> affiliated or endorsed by Williams College or its administration. 
+</div>
+<div class="header">
+  <div class="header-text">
+    <a href="index.html" class="current-parent current unstyled-link">
+      <h1><span class="text-white">College Crowd</span> <span class="logo">Williams</span></h1>
+    </a>
+  </div>
+</div>
+<div class="clearfix">
+  <ul class="nav nav-pills pull-right">
+    <li class='current-parent current'><a class='current-parent current' href="index.html">Projects</a></li>
+    <li><a href="guidelines/Funder_Guidelines.html">Funder Guidelines</a></li>
+    <li><a href="guidelines/Fundraiser_Guidelines.html">Fundraiser Guidelines</a></li>
+  </ul>
+</div>
         <table class="table table-hover">
           <thead>
             <tr>
@@ -15,74 +91,74 @@
           </thead>
           <tbody>
             <tr class="highlight">
-              <td><a href="<!-- @path proposals/Anna_Garzon_Proposal.html -->">Wildflour Bakery needs new equipment!</a></td>
+              <td><a href="proposals/Anna_Garzon_Proposal.html">Help student-run Wildflour Bakery grow in Williamstown!</a></td>
               <td>Anna Garzon ('14)</td>
               <td>0</td>
-              <td>$0 of $2,000</td>
+              <td>$0 of $2,800</td>
             </tr>
             <tr>
-              <td><a href="<!-- @path proposals/Ari_Benjamin_Proposal.html -->">Community for a Committed Farm-to-Table Lifestyle</a></td>
+              <td><a href="proposals/Ari_Benjamin_Proposal.html">Community for a Committed Farm-to-Table Lifestyle</a></td>
               <td>Ari Benjamin ('13)</td>
               <td>0</td>
               <td>$0 of $800,000</td>
             </tr>
             <tr>
-              <td><a href="<!-- @path proposals/Ben_Corwin_Proposal.html -->">Skiing Across the World</a></td>
+              <td><a href="proposals/Ben_Corwin_Proposal.html">Skiing Across the World</a></td>
               <td>Ben Corwin ('15)</td>
               <td>0</td>
               <td>$0 of $10,000</td>
             </tr>
             <tr>
-              <td><a href="<!-- @path proposals/Guedis_Cardenas_20Seconds.html -->">20 Seconds to a Better You and World</a></td>
+              <td><a href="proposals/Guedis_Cardenas_20Seconds.html">20 Seconds to a Better You and World</a></td>
               <td>Guedis S. Cardenas ('15)</td>
               <td>0</td>
               <td>$0 of $81.39</td>
             </tr>
             </tr>
             <tr>
-              <td><a href="<!-- @path proposals/Guedis_Cardenas_SincerelyEphs.html -->">SincerelyEphs.org</a></td>
+              <td><a href="proposals/Guedis_Cardenas_SincerelyEphs.html">SincerelyEphs.org</a></td>
               <td>Guedis S. Cardenas ('15)</td>
               <td>0</td>
               <td>$0 of $1,000</td>
             </tr>
             <tr>
-              <td><a href="<!-- @path proposals/InteracTiV_Proposal.html -->">InteracTiV: re-imagining multimedia as a social conversation</a></td>
+              <td><a href="proposals/InteracTiV_Proposal.html">InteracTiV: re-imagining multimedia as a social conversation</a></td>
               <td>Alejandro Fenn et al. ('14)</td>
               <td>0</td>
               <td>$0 of $30,000</td>
             </tr>
             <tr>
-              <td><a href="<!-- @path proposals/Katherine_Arellano_Proposal.html -->">Mental Illness Awareness for the Underprivileged</a></td>
+              <td><a href="proposals/Katherine_Arellano_Proposal.html">Mental Illness Awareness for the Underprivileged</a></td>
               <td>Katherine Arellano ('??)</td>
               <td>0</td>
               <td>$0 of $4,000</td>
             </tr>
             <tr>
-              <td><a href="<!-- @path proposals/Learn2Earn_Proposal.html -->">Learn2Earn: An educational fundraising platform</a></td>
+              <td><a href="proposals/Learn2Earn_Proposal.html">Learn2Earn: An educational fundraising platform</a></td>
               <td>Raphael Menko ('12)</td>
               <td>0</td>
               <td>$0 of $6,000</td>
             </tr>
             <tr>
-              <td><a href="<!-- @path proposals/LocalCycle_Proposal.html -->">LocalCycle: Connecting Local Producers with Wholesale Buyers</a></td>
+              <td><a href="proposals/LocalCycle_Proposal.html">LocalCycle: Connecting Local Producers with Wholesale Buyers</a></td>
               <td>Kaison Tanabe et al. ('13)</td>
               <td>0</td>
               <td>$0 of $20,000</td>
             </tr>
             <tr>
-              <td><a href="<!-- @path roposals/Newton_Davis_Proposal.html -->">Urban Unchained: Promoting sustainable urban living and people powered transportation</a></td>
+              <td><a href="proposals/Newton_Davis_Proposal.html">Urban Unchained: Promoting sustainable urban living and people powered transportation</a></td>
               <td>Newton Davis ('12)</td>
               <td>0</td>
               <td>$0 of $6,500</td>
             </tr>
             <tr class="highlight">
-              <td><a href="<!-- @path proposals/Nicholas_Pugliese_Proposal.html -->">Breaking Barriers by Playing Professional Soccer in Kabul</a></td>
+              <td><a href="proposals/Nicholas_Pugliese_Proposal.html">Breaking Barriers by Playing Professional Soccer in Kabul</a></td>
               <td>Nicholas Pugliese ('12)</td>
               <td>0</td>
               <td>$0 of $3,000</td>
             </tr>
             <tr>
-              <td><a href="<!-- @path proposals/Tom_Stites_Proposal.html -->">The Banyan Project: Pioneering a new business model for web journalism</a></td>
+              <td><a href="proposals/Tom_Stites_Proposal.html">The Banyan Project: Pioneering a new business model for web journalism</a></td>
               <td>Tom Stites ('64)</td>
               <td>0</td>
               <td>$0 of $50,000</td>
@@ -93,4 +169,8 @@
     </div>
   </div>
 
-<!-- @include footer -->
+  <!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+</body>
+</html>
