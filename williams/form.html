@@ -1,0 +1,193 @@
+<!-- @include header -->
+
+<!-- @include banner -->
+
+<div class="row-fluid">
+  <div class="span9">
+    <form id="pledge_form" class="form-horizontal">
+      <fieldset>
+        <legend>Make your pledge to &ldquo;<span id="project_name"></span>&rdquo;!</legend>
+        <input id="project_name_hidden" type="hidden" name="project">
+        <div class="control-group">
+          <label class="control-label">First Name</label>
+          <div class="controls">
+            <input type="text" name="firstname" class="input-large" placeholder="Thai">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Last Name</label>
+          <div class="controls">
+            <input type="text" name="lastname" class="input-large" placeholder="Nguyen">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Class of</label>
+          <div class="controls">
+            <select name="classof">
+              <option>Unspecified</option>
+              <option>2017</option>
+              <option>2016</option>
+              <option>2015</option>
+              <option>2014</option>
+              <option>2013</option>
+              <option>2012</option>
+              <option>2011</option>
+              <option>2010</option>
+              <option>2009</option>
+              <option>2008</option>
+              <option>2007</option>
+              <option>2006</option>
+              <option>2005</option>
+              <option>2004</option>
+              <option>2003</option>
+              <option>2002</option>
+              <option>2001</option>
+              <option>2000</option>
+              <option>1999</option>
+              <option>1998</option>
+              <option>1997</option>
+              <option>1996</option>
+              <option>1995</option>
+              <option>1994</option>
+              <option>1993</option>
+              <option>1992</option>
+              <option>1991</option>
+              <option>1990</option>
+              <option>1989</option>
+              <option>1988</option>
+              <option>1987</option>
+              <option>1986</option>
+              <option>1985</option>
+              <option>1984</option>
+              <option>1983</option>
+              <option>1982</option>
+              <option>1981</option>
+              <option>1980</option>
+              <option>1979</option>
+              <option>1978</option>
+              <option>1977</option>
+              <option>1976</option>
+              <option>1975</option>
+              <option>1974</option>
+              <option>1973</option>
+              <option>1972</option>
+              <option>1971</option>
+              <option>1970</option>
+              <option>1969</option>
+              <option>1968</option>
+              <option>1967</option>
+              <option>1966</option>
+              <option>1965</option>
+              <option>1964</option>
+              <option>1963</option>
+              <option>1962</option>
+              <option>1961</option>
+              <option>1960</option>
+              <option>1959</option>
+              <option>1958</option>
+              <option>1957</option>
+              <option>1956</option>
+              <option>1955</option>
+              <option>1954</option>
+              <option>1953</option>
+              <option>1952</option>
+              <option>1951</option>
+              <option>1950</option>
+              <option>1949</option>
+              <option>1948</option>
+              <option>1947</option>
+              <option>1946</option>
+              <option>1945</option>
+              <option>1944</option>
+              <option>1943</option>
+              <option>1942</option>
+              <option>1941</option>
+              <option>1940</option>
+              <option>1939</option>
+              <option>1938</option>
+              <option>1937</option>
+              <option>1936</option>
+              <option>1935</option>
+            </select>
+            <p class="help-block">You only need to fill this out if you're a Williams alum.</p>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Email Address</label>
+          <div class="controls">
+            <input type="email" name="email" class="input-large" placeholder="thai@college-crowd.com">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Contribution</label>
+          <div class="controls">
+            <div class="input-prepend input-append">
+              <span class="add-on">$</span>
+              <input class="input-small" type="number" name="contribution" placeholder="100">
+              <span class="add-on">.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Subscribe</label>
+          <div class="controls">
+            <label class="checkbox">
+              <input type="checkbox" name="subscribe" checked="checked">
+              Keep me updated on new student-submitted
+              <br>College Crowd projects, and other College Crowd news.
+            </label>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Affiliation with Fundraiser</label>
+          <div class="controls">
+            <select name="affiliationwithfundraiser">
+              <option>Unspecified</option>
+              <option>Family</option>
+              <option>Friend</option>
+              <option>Co-worker</option>
+              <option>Classmate</option>
+              <option>Mentor</option>
+              <option>Co-alumni</option>
+              <option>Don't know them</option>
+              <option>Other</option>
+            </select>
+            <p class="help-block">How do you know the Fundraiser?</p>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Comments</label>
+          <div class="controls">
+            <textarea class="input-xlarge" name="comments" rows="3"></textarea>
+            <p class="help-block">
+              Anything you'd like to say; now's your time to shine!
+              <br>Whether it's to the Fundraiser or to the organizers of College Crowd.
+              <br>We're all one big team and would love your feedback!
+            </p>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Agree</label>
+          <div class="controls">
+            <label class="checkbox">
+              <input type="checkbox" name="subscribe" checked="checked">
+              I agree to follow through with my contribution to this project
+              <br><span id="funds">and to work with the Fundraiser in coordinating funds transfer</span>
+            </label>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button id="submit_button" type="submit" class="btn btn-primary btn-large">Donate</button>
+          <p id="submit_message" class="help-block hide" style="margin-top:10px;">Clicking "Next" will take you to the Fundraiser's secure PayPal donation page to complete your pledge.</p>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div class="span3">
+    <div class="well">
+      <span class="badge badge-warning">IMPORTANT</span> College Crowd does not guarantee projects or investigate a creator's ability to complete their project. It is the responsibility of the project creator to complete their project as promised, and the claims of this project are theirs alone. Please review our <a href="<!-- @path Funder_Guidelines -->">Funder Guidelines</a> for more information.
+    </div>
+  </div>
+</div>
+
+<!-- @include footer -->

@@ -16,11 +16,11 @@
       ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
       ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
       ws.onmessage = function(){
-        var links = document.getElementsByTagName('link'); 
-        for (var i = 0; i < links.length;i++) { 
-          var link = links[i]; 
-          if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-            href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+        var links = document.getElementsByTagName('link');
+        for (var i = 0; i < links.length;i++) {
+          var link = links[i];
+          if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+            href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
             link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
           }
         }
@@ -54,6 +54,16 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-114x114.png"> -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42502843-1', 'college-crowd.com');
+  ga('send', 'pageview');
+
+</script>
   </head>
   <body>
 
@@ -64,7 +74,7 @@
             <i class="icon icon-money icon-large"></i> <strong>Interested in funding a project?</strong> Please first read our <a href="../guidelines/Funder_Guidelines.html" class="link-white">guidelines</a>.
           </div>
           <div class="alert alert-info">
-            <i class="icon icon-info-sign icon-large"></i> College Crowd is organized by members of the Williams Alumni Community. It is <strong>not</strong> affiliated or endorsed by Williams College or its administration. 
+            <i class="icon icon-info-sign icon-large"></i> College Crowd is organized by members of the Williams Alumni Community. It is <strong>not</strong> affiliated or endorsed by Williams College or its administration.
           </div>
           <div class="header">
             <div class="header-text">
@@ -123,16 +133,16 @@
             </center>
 
             <h2>How much cash do you need?</h2>
-            <p>$2800 total. 
+            <p>$2800 total.
               <ul>
-                <li><b>Countertop convection oven ($1100)</b>-increase efficiency of baking process; 4-pan capacity instead of the 2-pan capacity of a normal oven</li> 
-                <li><b>Five new sheet pans ($30 total)</b>-more sheet pans can fit more pastries!</li> 
-                <li><b>Sheet pan rolling rack ($100)</b>-easy sheet pan stacking and increase space efficiency</li> 
-                <li><b>Five sheet pan covers ($40 total)</b>-clean transport of baked goods</li> 
+                <li><b>Countertop convection oven ($1100)</b>-increase efficiency of baking process; 4-pan capacity instead of the 2-pan capacity of a normal oven</li>
+                <li><b>Five new sheet pans ($30 total)</b>-more sheet pans can fit more pastries!</li>
+                <li><b>Sheet pan rolling rack ($100)</b>-easy sheet pan stacking and increase space efficiency</li>
+                <li><b>Five sheet pan covers ($40 total)</b>-clean transport of baked goods</li>
                 <li><b>Other kitchen accessories ($100 total)</b>-such as a tiered cooling rack and new spatulas, rolling pin</li>
-                <li><b>Website ($100 for the year)</b>-increase professionalism, showcase all that Wildflour Bakery offers</li> 
-                <li><b>EZ Up canopy ($220)</b>-necessary for Farmers' Markets (I had been borrowing from a farmer friend)</li> 
-                <li><b>Tables ($150 for three)</b>-same as above</li> 
+                <li><b>Website ($100 for the year)</b>-increase professionalism, showcase all that Wildflour Bakery offers</li>
+                <li><b>EZ Up canopy ($220)</b>-necessary for Farmers' Markets (I had been borrowing from a farmer friend)</li>
+                <li><b>Tables ($150 for three)</b>-same as above</li>
                 <li><b>Kitchen permit ($350)</b>-I have to renew my permit in order to bake legally for retail and wholesale sales</li>
                 <li><b>Display case for coffee house($100-200)</b>-to help my pastries look as good as they taste!</li>
                 <li><b>Signs, business cards, and marketing materials ($300)</b>-to spread the word about Wildflour Bakery!</li>
@@ -143,11 +153,11 @@
               </center>
 
               <h2>Can I help without donating cash?</h2>
-              <p>Yes! First and foremost, I welcome any and all suggestions/tips/advice on running a small or micro-business of any kind. I would love to hear from you, even if you cannot or do not want to donate, please reach out—I love making connections. I’d love to create or be part of a network of people who are working in any part of food production—from crafting compost to making wine to running a CSA, I’d love to hear about all of it.</p> 
+              <p>Yes! First and foremost, I welcome any and all suggestions/tips/advice on running a small or micro-business of any kind. I would love to hear from you, even if you cannot or do not want to donate, please reach out—I love making connections. I’d love to create or be part of a network of people who are working in any part of food production—from crafting compost to making wine to running a CSA, I’d love to hear about all of it.</p>
 
               <p>I could also really benefit from financial advice. If you know anything about the finances of running a small business, I’d love to speak with you.</p>
 
-              <p>Finally, if you happen to have any skills in website design and would be interested in helping, I’d also love to hear from you (I am planning to use SquareSpace, but if anyone has a better suggestion, I’m definitely open to it). <a href="mailto:wildflourwilliamstown@gmail.com">Feel free to email me!</a> 
+              <p>Finally, if you happen to have any skills in website design and would be interested in helping, I’d also love to hear from you (I am planning to use SquareSpace, but if anyone has a better suggestion, I’m definitely open to it). <a href="mailto:wildflourwilliamstown@gmail.com">Feel free to email me!</a>
               </p>
 
               <center>
@@ -160,12 +170,12 @@
                 <h2><i class="icon icon-thumbs-up"></i> 0<br><small class="text-purple">Backers</small></h2>
                 <h2><i class="icon icon-money"></i> $0<br><small class="text-purple">Raised of $2,800</small></h2>
                 <p>
-                  <button class="btn btn-primary btn-block btn-large" type="submit"><i class="icon icon-thumbs-up"></i> Back This Project</button>
-                  <button class="btn btn-block btn-large" type="submit">
+                  <a href="#" data-project="1" class="back-track btn btn-primary btn-block btn-large"><i class="icon icon-thumbs-up"></i> Back This Project</a>
+                  <a href="#" data-project="1" class="message-track btn btn-block btn-large">
                     <i class="icon icon-comment"></i> Message The Team
                     <br>
                     <small><em>and support in any way you can!</em></small>
-                  </button>
+                  </a>
                 </p>
                 <p>Help this fundraiser by sharing this link with your networks: <span class="badge badge-success">goo.gl/TRC</span></p>
               </div>
@@ -194,5 +204,10 @@
   <!-- Le javascript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
+  <script src="../../assets/js/jquery-1.10.2.js"></script>
+  <script src="../../assets/js/happy-bootstrap.js"></script>
+  <script src="../../assets/js/happy.methods.js"></script>
+  <script src="../../assets/js/app.js"></script>
+  <script src="../../assets/js/form.js.js"></script>
 </body>
 </html>
