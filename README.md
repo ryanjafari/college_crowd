@@ -1,7 +1,7 @@
 # college_crowd
 College community centric crowdfunding platform MVP
 
-## Status
+## Status :vertical_traffic_light:
 The experiment has finished. Our fundraisers raised over $20,000 and brought joy with soccer to undeserved areas, started businesses, and more. That's pretty neat for an "app" built on sticks that was up for a month and change.
 
 ## What is this?
