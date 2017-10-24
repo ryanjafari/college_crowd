@@ -1,5 +1,5 @@
 # college_crowd
-College community centric crowdfunding platform MVP
+College community centric crowdsourcing platform that raised over $20,000 for its fundraisers in one week
 
 ## Status :vertical_traffic_light:
 The experiment has finished. Our fundraisers raised over $20,000 and brought joy with soccer to undeserved areas, started businesses, and more. That's pretty neat for an "app" built on sticks that was up for a month and change.
